@@ -27,6 +27,7 @@ body {
 
 .navbar{
     background-color: var(--color-dark);
+    min-height: calc(10vh - 4rem);
 }
 
 .navbar div:first-child{
@@ -134,9 +135,10 @@ body {
     color 0.2s ease,
     transform 0.2s ease;
 }
-.navbar__reserve .reserve:hover {
-    color: rgba(255, 255, 255, 0.954);
-    transform: translateY(-0.25rem);
+.navbar__reserve .reserve:active {
+    background-color: white;
+    color: var(--color-dark);
+    transform: scale(0.97);
 }
 
 .navbar__menu a:focus-visible,
@@ -172,7 +174,167 @@ body {
 
     .navbar__reserve {
         width: fit-content;
-        border-radius: 10%;
+        min-height: 3rem;
+    
+        border-radius: 0.25rem;
+    }
+
+    .navbar__reserve a:hover{
+        background-color: white;
+        color: var(--color-dark);
+        border-radius: 0.25rem;
+    }
+
+}
+
+.hero{
+    position: relative;
+    min-height: calc(90vh - 4rem);
+    background-image: url("../img/restaurante-1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero__content {
+    position: relative;
+    z-index: 1;
+
+    min-height: calc(100vh - 4rem);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem 1.25rem;
+
+    text-align: center;
+}
+
+.hero__eyebrow {
+    margin-bottom: 0.75rem;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+
+    color: white;
+}
+
+.hero__title {
+    margin-bottom: 1rem;
+
+    font-size: clamp(3rem, 15vw, 6rem);
+    line-height: 0.95;
+
+    color: white;
+}
+
+.hero__description {
+    max-width: 35rem;
+
+    margin-bottom: 2rem;
+
+    color: white;
+
+    font-size: 1rem;
+}
+
+.hero__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    width: 100%;
+    max-width: 20rem;
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 3rem;
+    padding: 0.75rem 1.25rem;
+
+    border: 2px solid transparent;
+    border-radius: 0.25rem;
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.button--primary {
+    background-color: var(--color-accent);
+    color: white;
+}
+.button--primary:hover {
+    background-color: white;
+    color: var(--color-dark);
+}
+.button--primary:active {
+    transform: scale(0.97);
+}
+.button--secondary {
+    border-color: var(--color-accent);
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.388);
+}
+.button--secondary:hover {
+    background-color: white;
+    border-color: white;
+    color: var(--color-dark);
+}
+.button--secondary:active {
+    transform: scale(0.97);
+}
+.button:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+}
+
+@media (min-width: 768px) {
+
+    .hero__content {
+        align-items: center;
+
+        padding: 4rem 2rem;
+
+        text-align: center;
+
+        max-width: var(--content-width);
+        margin: 0 auto;
+
+    }
+    .hero {
+        min-height: calc(100vh - 4rem);
+    }
+
+    .hero__actions {
+        flex-direction: row;
+        width: auto;
+        max-width: none;
+    }
+
+    .hero__title {
+        font-size: clamp(3rem, 8vw, 6rem);
     }
 
 }
