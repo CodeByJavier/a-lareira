@@ -8,22 +8,46 @@
     <title>A Lareira | Restaurante</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="js" href="css/style.css">
 </head>
 
 <body>
     <header>
-        <nav>
-            <a href="#">A Lareira</a>
+        <nav class="navbar">
 
             <div>
-                <a href="#inicio">Inicio</a>
-                <a href="#historia">Nuestra historia</a>
-                <a href="#carta">Carta</a>
-                <a href="#galeria">Galería</a>
-                <a href="#contacto">Contacto</a>
+                <a href="#inicio" class="navbar__logo">
+                    A Lareira
+                </a>
+        
+                <button
+                    class="navbar__toggle"
+                    type="button"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
             </div>
+            
+    
+            <div class="navbar__menu">
+    
+                <a href="#inicio" class="link">Inicio</a>
+                <a href="#historia" class="link">Nuestra historia</a>
+                <a href="#carta" class="link">Carta</a>
+                <a href="#galeria" class="link">Galería</a>
+                <a href="#contacto" class="link">Contacto</a>
 
-            <a href="#reservar">Reservar</a>
+                <div class="navbar__reserve">
+                    <a href="#reservar" class="reserve">
+                        Reservar
+                    </a>
+                </div>
+             
+    
+            </div>
+    
         </nav>
     </header>
 
@@ -264,6 +288,7 @@
     
     </footer>
 
+    <script src="js/script.js"></script>
 </body>
 
 </html>
