@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: Arial, sans-serif;
     color: var(--color-text);
@@ -189,7 +191,7 @@ body {
 
 .hero{
     position: relative;
-    min-height: calc(90vh - 4rem);
+    min-height: calc(100vh - 4rem);
     background-image: url("../img/restaurante-1.jpg");
     background-size: cover;
     background-position: center;
@@ -391,4 +393,106 @@ body {
     .story__image {
         margin-bottom: 0;
     }
+}
+
+.specialties {
+    width: min(100% - 2.5rem, var(--content-width));
+
+    margin: 0 auto;
+
+    padding: 5rem 0;
+}
+.section-heading {
+    margin-bottom: 2.5rem;
+
+    text-align: center;
+}
+.specialties__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+.dish-card {
+    overflow: hidden;
+
+    background-color: white;
+
+    border-radius: 0.5rem;
+
+    box-shadow:
+        0 0.5rem 2rem rgba(0, 0, 0, 0.08);
+}
+.dish-card__image {
+    overflow: hidden;
+}
+
+.dish-card__image img {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+.dish-card__content {
+    padding: 1.5rem;
+}
+.dish-card__heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    margin-bottom: 0.75rem;
+}
+.dish-card__heading h3 {
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+.dish-card__heading span {
+    flex-shrink: 0;
+
+    color: var(--color-accent);
+
+    font-weight: 700;
+}
+.dish-card__content p {
+    color: #666;
+}
+.dish-card:hover {
+    transform: translateY(-0.35rem);
+}
+.dish-card {
+    overflow: hidden;
+
+    background-color: white;
+
+    border-radius: 0.5rem;
+
+    box-shadow:
+        0 0.5rem 2rem rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+.dish-card:hover {
+    transform: translateY(-0.35rem);
+
+    box-shadow:
+        0 1rem 3rem rgba(0, 0, 0, 0.12);
+}
+.dish-card:hover .dish-card__image img {
+    transform: scale(1.04);
+}
+@media (min-width: 768px) {
+
+    .specialties__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
 }

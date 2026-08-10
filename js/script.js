@@ -12,3 +12,19 @@ menuToggle.addEventListener("click", () => {
     menuToggle.setAttribute("aria-expanded", isOpen);
 
 });
+
+const menuLinks = document.querySelectorAll(".navbar__menu a");
+
+menuLinks.forEach((link) => {
+
+    link.addEventListener("click", () => {
+
+        menu.classList.remove("navbar__menu--open");
+
+        menuToggle.textContent = "☰";
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+    });
+
+});
