@@ -642,21 +642,19 @@ body {
 }
 .location__map {
     width: 100%;
-}
 
-.map-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-    aspect-ratio: 4 / 3;
-
-    background-color: #ddd;
-
-    color: #666;
+    overflow: hidden;
 
     border-radius: 0.5rem;
+}
+
+.location__map iframe {
+    display: block;
+
+    width: 100%;
+    height: 22rem;
+
+    border: 0;
 }
 
 @media (min-width: 768px){
@@ -674,9 +672,10 @@ body {
     .location__content {
         margin-bottom: 0;
     }
-    .map-placeholder {
-        aspect-ratio: 16 / 10;
+    .location__map iframe {
+        height: 30rem;
     }
+
 }
 
 .reservation {
