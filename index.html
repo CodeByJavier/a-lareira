@@ -32,15 +32,14 @@
             
     
             <div class="navbar__menu">
-    
-                <a href="#inicio" class="link">Inicio</a>
+
                 <a href="#historia" class="link">Nuestra historia</a>
                 <a href="#carta" class="link">Carta</a>
                 <a href="#galeria" class="link">Galería</a>
-                <a href="#contacto" class="link">Contacto</a>
+                <a href="#foot" class="link">Contacto</a>
 
                 <div class="navbar__reserve">
-                    <a href="#reservar" class="reserve">
+                    <a href="#reservas" class="reserve">
                         Reservar
                     </a>
                 </div>
@@ -308,79 +307,242 @@
         
         </section>
 
-        <section id="galeria">
+        <section id="galeria" class="gallery">
 
-            <p>EL RESTAURANTE</p>
+            <div class="section-heading">
         
-            <h2>Un vistazo a A Lareira</h2>
+                <p class="section-eyebrow">
+                    EL RESTAURANTE
+                </p>
         
-            <div>
+                <h2 class="section-title">
+                    Un vistazo a A Lareira
+                </h2>
         
-                <img src="img/restaurante-1.jpg" alt="Interior del restaurante">
+            </div>
         
-                <img src="img/restaurante-2.jpg" alt="Mesa del restaurante">
         
-                <img src="img/restaurante-3.jpg" alt="Plato del restaurante">
+            <div class="gallery__grid">
+        
+                <figure class="gallery__item gallery__item--large">
+                    <img
+                        src="img/restaurante-1.jpg"
+                        alt="Interior del restaurante A Lareira"
+                    >
+                </figure>
+        
+        
+                <figure class="gallery__item">
+                    <img
+                        src="img/restaurante-2.jpg"
+                        alt="Mesa preparada del restaurante A Lareira"
+                    >
+                </figure>
+        
+        
+                <figure class="gallery__item">
+                    <img
+                        src="img/restaurante-3.jpg"
+                        alt="Plato servido en A Lareira"
+                    >
+                </figure>
         
             </div>
         
         </section>
 
-        <section id="contacto">
+        <section id="visitanos" class="location">
 
-            <p>VISÍTANOS</p>
+            <div class="location__content">
         
-            <h2>Estamos aquí</h2>
+                <p class="section-eyebrow">
+                    VISÍTANOS
+                </p>
         
-            <div>
+                <h2 class="section-title">
+                    Ven a disfrutar de nuestra cocina
+                </h2>
         
-                <h3>Dirección</h3>
-                <p>Rúa de Galicia, 24</p>
-                <p>A Coruña</p>
+        
+                <div class="location__details">
+        
+                    <div class="location__detail">
+        
+                        <h3>Dirección</h3>
+        
+                        <address>
+                            Rúa do Restaurante, 12<br>
+                            15001 A Coruña
+                        </address>
+        
+                    </div>
+        
+        
+                    <div class="location__detail">
+        
+                        <h3>Teléfono</h3>
+        
+                        <a href="tel:+34981123456">
+                            981 123 456
+                        </a>
+        
+                    </div>
+        
+        
+                    <div class="location__detail">
+        
+                        <h3>Horario</h3>
+        
+                        <p>
+                            Lunes – Domingo<br>
+                            13:00 – 16:00<br>
+                            20:00 – 23:30
+                        </p>
+        
+                    </div>
+        
+                </div>
+        
+        
+                <a
+                    href="#"
+                    class="button button--primary"
+                >
+                    Cómo llegar
+                </a>
         
             </div>
         
-            <div>
         
-                <h3>Horario</h3>
-                <p>Martes - Domingo</p>
-                <p>13:00 - 16:00 · 20:00 - 00:00</p>
+            <div class="location__map">
         
-            </div>
-        
-            <div>
-        
-                <h3>Contacto</h3>
-                <p>981 000 000</p>
-                <p>info@alareira.es</p>
+                <div class="map-placeholder">
+                    <span>Mapa</span>
+                </div>
         
             </div>
         
         </section>
 
-        <section id="reservar">
+        <section id="reservas" class="reservation">
 
-            <p>RESERVAS</p>
+            <div class="reservation__content">
         
-            <h2>¿Nos vemos en A Lareira?</h2>
+                <p class="section-eyebrow">
+                    RESERVAS
+                </p>
         
-            <p>
-                Reserva tu mesa y ven a disfrutar de nuestra cocina.
-            </p>
+                <h2 class="section-title">
+                    Reserva tu mesa
+                </h2>
         
-            <a href="tel:+34981000000">
-                Llamar para reservar
-            </a>
+                <p>
+                    Disfruta de nuestra cocina gallega y comparte
+                    un momento especial con nosotros.
+                </p>
+        
+                <a href="tel:+34981123456" class="button button--light">
+                    Reservar mesa
+                </a>
+        
+            </div>
         
         </section>
 
     </main>
 
-    <footer>
+    <footer class="footer" id="foot">
 
-        <p>© 2026 A Lareira</p>
+        <div class="footer__content">
     
-        <p>Restaurante · A Coruña</p>
+            <div class="footer__brand">
+    
+                <a href="#inicio" class="footer__logo">
+                    A Lareira
+                </a>
+    
+                <p>
+                    Cocina gallega con producto local
+                    y tradición.
+                </p>
+    
+            </div>
+    
+    
+            <nav class="footer__nav" aria-label="Navegación del pie de página">
+    
+                <h2>
+                    Enlaces
+                </h2>
+    
+                <ul>
+    
+                    <li>
+                        <a href="#inicio">Inicio</a>
+                    </li>
+    
+                    <li>
+                        <a href="#historia">Nuestra historia</a>
+                    </li>
+    
+                    <li>
+                        <a href="#carta">Carta</a>
+                    </li>
+    
+                    <li>
+                        <a href="#restaurante">El restaurante</a>
+                    </li>
+    
+                    <li>
+                        <a href="#visitanos">Visítanos</a>
+                    </li>
+    
+                </ul>
+    
+            </nav>
+    
+    
+            <div class="footer__contact">
+    
+                <h2>
+                    Contacto
+                </h2>
+    
+                <address>
+    
+                    <p>
+                        Rúa do Restaurante, 12<br>
+                        15001 A Coruña
+                    </p>
+    
+                    <a href="tel:+34981123456">
+                        981 123 456
+                    </a>
+    
+                </address>
+    
+            </div>
+    
+        </div>
+    
+    
+        <div class="footer__bottom">
+    
+            <p>
+                © 2026 A Lareira
+            </p>
+    
+            <div>
+                <a href="#">
+                    Aviso legal
+                </a>
+    
+                <a href="#">
+                    Privacidad
+                </a>
+            </div>
+    
+        </div>
     
     </footer>
 
