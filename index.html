@@ -1,555 +1,468 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>A Lareira | Restaurante</title>
+  <title>A Lareira | Restaurante de cocina gallega en A Coruña</title>
+  <meta name="description" content="A Lareira: restaurante de cocina gallega tradicional en A Coruña. Producto local, marisco fresco y recetas con raíces. Reserva tu mesa online." />
+  <meta name="theme-color" content="#1c1c1c" />
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="js" href="css/style.css">
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:title" content="A Lareira | Restaurante de cocina gallega" />
+  <meta property="og:description" content="Cocina gallega tradicional con producto local, en A Coruña. Reserva tu mesa online." />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%231c1c1c'/%3E%3Cpath d='M12 4c-2 3-4 4-4 7a4 4 0 0 0 8 0c0-1-1-2-1.5-1.2-.3.5.2 1.2-.5 1.2-1 0-1-1.5 0-3C15 6.5 13 5 12 4Z' fill='%23c79a63'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
-    <header>
-        <nav class="navbar">
+  <a href="#main" class="skip-link">Saltar al contenido</a>
 
-            <div>
-                <a href="#inicio" class="navbar__logo">
-                    A Lareira
-                </a>
-        
-                <button
-                    class="navbar__toggle"
-                    type="button"
-                    aria-label="Abrir menú"
-                    aria-expanded="false"
-                >
-                    ☰
-                </button>
+  <!-- Sprite de iconos SVG (oculto, reutilizado por toda la página) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c-2.2 3.3-4.4 4.6-4.4 7.9a4.4 4.4 0 0 0 8.8 0c0-1.2-1.1-2.2-1.7-1.3-.3.6.2 1.3-.5 1.3-1.1 0-1.1-1.7 0-3.4C15.4 5.8 13.2 4.2 12 3Z"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></symbol>
+    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M20 4C10 4 4 10 4 18c0 .6.1 1.3.2 1.8"/><path d="M20 4c0 10-6 16-14 16"/><path d="M8 16c2-2 5-4 9-6"/></symbol>
+    <symbol id="icon-wave" viewBox="0 0 24 24"><path d="M3 9c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/><path d="M3 15c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/></symbol>
+    <symbol id="icon-pot" viewBox="0 0 24 24"><path d="M4 10h16l-1.2 8.4a2 2 0 0 1-2 1.6H7.2a2 2 0 0 1-2-1.6Z"/><path d="M2 10h20"/><path d="M8 10V7a1 1 0 0 1 1-1h1M16 10V7a1 1 0 0 0-1-1h-1"/></symbol>
+    <symbol id="icon-chevron-down" viewBox="0 0 24 24"><path d="M6 9 L12 15 L18 9"/></symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2 L14.9 8.6 L22 9.3 L16.7 14.1 L18.2 21.2 L12 17.6 L5.8 21.2 L7.3 14.1 L2 9.3 L9.1 8.6 Z"/></symbol>
+    <symbol id="icon-quote" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M4 8 C4 5.5 6 4 8.5 4 V6.5 C7.2 6.5 6.5 7.2 6.5 8.5 H8.5 V14 H4 Z M13.5 8 C13.5 5.5 15.5 4 18 4 V6.5 C16.7 6.5 16 7.2 16 8.5 H18 V14 H13.5 Z"/></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M6 3 H9 L11 8 L8.5 9.5 A11 11 0 0 0 14.5 15.5 L16 13 L21 15 V18 A3 3 0 0 1 18 21 C10 21 3 14 3 6 A3 3 0 0 1 6 3 Z"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 6 L12 13 L21 6"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M12 21 C8 16.5 5 13 5 9.5 A7 7 0 0 1 19 9.5 C19 13 16 16.5 12 21 Z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L16 14.5"/></symbol>
+    <symbol id="icon-arrow-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><path d="M6 11 L12 5 L18 11"/></symbol>
+    <symbol id="icon-spinner" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" opacity="0.25"/><path d="M21 12 A9 9 0 0 0 12 3"/></symbol>
+  </svg>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo">
+        <svg class="icon" width="22" height="22"><use href="#icon-flame"/></svg>
+        A Lareira
+      </a>
+
+      <nav class="nav" id="nav" data-nav>
+        <ul class="nav__links">
+          <li><a href="#historia">Nuestra historia</a></li>
+          <li><a href="#especialidades">Especialidades</a></li>
+          <li><a href="#carta">Carta</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#opiniones">Opiniones</a></li>
+          <li><a href="#visitanos">Visítanos</a></li>
+        </ul>
+        <a href="#reservas" class="btn btn--primary">Reservar mesa</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-controls="nav" aria-expanded="false" aria-label="Abrir menú de navegación">
+        <svg class="icon" width="26" height="26"><use href="#icon-menu"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="nav__backdrop" id="navBackdrop" hidden></div>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <div class="hero__bg">
+      </div>
+      <div class="container hero__inner">
+        <p class="hero__eyebrow">Restaurante · Cocina gallega</p>
+        <h1 class="hero__title">A Lareira</h1>
+        <p class="hero__text">
+          Sabores de Galicia, producto local y cocina hecha con calma, en el
+          corazón de A Coruña.
+        </p>
+        <div class="hero__actions">
+          <a href="#carta" class="btn btn--ghost-light">Ver nuestra carta</a>
+          <a href="#reservas" class="btn btn--primary">Reservar mesa</a>
+        </div>
+      </div>
+      <a href="#historia" class="hero__scroll" aria-label="Bajar a la siguiente sección">
+        Descubre más
+        <svg class="icon" width="18" height="18"><use href="#icon-chevron-down"/></svg>
+      </a>
+    </section>
+
+    <!-- ============ FRANJA DE CONFIANZA ============ -->
+    <section class="trust" aria-label="Nuestros valores">
+      <div class="container trust__list" data-reveal>
+        <div class="trust__item">
+          <svg class="icon" width="26" height="26"><use href="#icon-leaf"/></svg>
+          Producto de proximidad y temporada
+        </div>
+        <div class="trust__item">
+          <svg class="icon" width="26" height="26"><use href="#icon-wave"/></svg>
+          Marisco y pescado fresco cada día
+        </div>
+        <div class="trust__item">
+          <svg class="icon" width="26" height="26"><use href="#icon-pot"/></svg>
+          Recetas con tradición familiar
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HISTORIA ============ -->
+    <section class="section story container" id="historia">
+      <div class="story__image" data-reveal>
+        <img src="img/restaurante-1.1-web.jpg" alt="Interior acogedor del restaurante A Lareira, con mesas de madera" loading="lazy" width="1200" height="800" />
+      </div>
+      <div class="story__content" data-reveal data-reveal-delay="120">
+        <p class="eyebrow">Sobre nosotros</p>
+        <h2>Una cocina con raíces gallegas</h2>
+        <p>
+          En A Lareira trabajamos con producto local y recetas tradicionales,
+          buscando siempre respetar el sabor de cada ingrediente. El nombre
+          del restaurante viene de la lareira, el hogar de piedra alrededor
+          del cual se reunían las familias gallegas.
+        </p>
+        <p>
+          Un espacio pensado para disfrutar de la gastronomía gallega en un
+          ambiente tranquilo y cercano, igual que en aquellas cocinas de
+          siempre.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ ESPECIALIDADES ============ -->
+    <section class="section section--alt" id="especialidades">
+      <div class="container">
+        <div class="section__head section__head--center" data-reveal>
+          <p class="eyebrow">De nuestra cocina</p>
+          <h2>Especialidades</h2>
+          <p>Tres platos que resumen lo que somos: producto fresco, técnica sencilla y mucho cariño.</p>
+        </div>
+
+        <div class="grid--dishes">
+          <article class="dish-card" data-reveal>
+            <div class="dish-card__image">
+              <img src="img/plato-1-web.jpg" alt="Pulpo a la gallega servido sobre cachelos, con pimentón y aceite de oliva" loading="lazy" width="900" height="600" />
             </div>
-            
-    
-            <div class="navbar__menu">
-
-                <a href="#historia" class="link">Nuestra historia</a>
-                <a href="#carta" class="link">Carta</a>
-                <a href="#galeria" class="link">Galería</a>
-                <a href="#visitanos" class="link">Visitanos</a>
-                <a href="#foot" class="link">Contacto</a>
-
-                <div class="navbar__reserve">
-                    <a href="#reservas" class="reserve">
-                        Reservar
-                    </a>
-                </div>
-             
-    
+            <div class="dish-card__body">
+              <div class="dish-card__heading">
+                <h3>Pulpo a la gallega</h3>
+                <span>18 €</span>
+              </div>
+              <p>Pulpo cocido, aceite de oliva, pimentón y sal.</p>
             </div>
-    
+          </article>
+
+          <article class="dish-card" data-reveal data-reveal-delay="100">
+            <div class="dish-card__image">
+              <img src="img/plato-2-web.jpg" alt="Merluza del día a la plancha con guarnición de temporada" loading="lazy" width="768" height="548" />
+            </div>
+            <div class="dish-card__body">
+              <div class="dish-card__heading">
+                <h3>Merluza del día</h3>
+                <span>22 €</span>
+              </div>
+              <p>Pescado fresco acompañado de productos de temporada.</p>
+            </div>
+          </article>
+
+          <article class="dish-card" data-reveal data-reveal-delay="200">
+            <div class="dish-card__image">
+              <img src="img/plato-3-web.jpg" alt="Tarta de queso casera con frutos rojos" loading="lazy" width="900" height="600" />
+            </div>
+            <div class="dish-card__body">
+              <div class="dish-card__heading">
+                <h3>Tarta de queso</h3>
+                <span>7 €</span>
+              </div>
+              <p>Cremosa, horneada lentamente y servida con frutos rojos.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CARTA ============ -->
+    <section class="section container" id="carta">
+      <div class="section__head" data-reveal>
+        <p class="eyebrow">Nuestra carta</p>
+        <h2>Para compartir y disfrutar</h2>
+        <p>Una selección pensada para compartir en la mesa, como se ha hecho siempre en Galicia.</p>
+      </div>
+
+      <div class="menu__categories" data-reveal data-reveal-delay="100">
+        <div class="menu-category">
+          <h3 class="menu-category__title">Entrantes</h3>
+          <div class="menu-category__items">
+            <div class="menu-item"><p>Pulpo a la gallega</p><span>18 €</span></div>
+            <div class="menu-item"><p>Croquetas caseras</p><span>10 €</span></div>
+            <div class="menu-item"><p>Tabla de quesos gallegos</p><span>14 €</span></div>
+            <div class="menu-item"><p>Empanada de zamburiñas</p><span>12 €</span></div>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <h3 class="menu-category__title">Platos principales</h3>
+          <div class="menu-category__items">
+            <div class="menu-item"><p>Merluza del día</p><span>22 €</span></div>
+            <div class="menu-item"><p>Entrecot de vaca gallega</p><span>26 €</span></div>
+            <div class="menu-item"><p>Arroz de marisco</p><span>24 €</span></div>
+            <div class="menu-item"><p>Lacón con grelos</p><span>19 €</span></div>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <h3 class="menu-category__title">Postres</h3>
+          <div class="menu-category__items">
+            <div class="menu-item"><p>Tarta de queso</p><span>7 €</span></div>
+            <div class="menu-item"><p>Filloas</p><span>6 €</span></div>
+            <div class="menu-item"><p>Tarta de Santiago</p><span>7 €</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="menu-note" data-reveal data-reveal-delay="180">* Precios en euros, IVA incluido. Consulta alérgenos con el equipo de sala.</p>
+    </section>
+
+    <!-- ============ GALERÍA ============ -->
+    <section class="section section--alt" id="galeria">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">El restaurante</p>
+          <h2>Un vistazo a A Lareira</h2>
+        </div>
+
+        <div class="gallery__grid" data-reveal data-reveal-delay="100">
+          <figure class="gallery__item gallery__item--wide gallery__item--tall">
+            <img src="img/restaurante-1-web.jpg" alt="Interior del restaurante A Lareira" loading="lazy" width="1920" height="1275" />
+          </figure>
+          <figure class="gallery__item">
+            <img src="img/restaurante-2-web.jpg" alt="Mesa preparada del restaurante A Lareira" loading="lazy" width="900" height="599" />
+          </figure>
+          <figure class="gallery__item">
+            <img src="img/restaurante-3-web.jpg" alt="Plato servido en A Lareira" loading="lazy" width="800" height="532" />
+          </figure>
+          <figure class="gallery__item">
+            <img src="img/plato-2-web.jpg" alt="Detalle de la merluza del día" loading="lazy" width="768" height="548" />
+          </figure>
+          <figure class="gallery__item">
+            <img src="img/restaurante-1.1-web.jpg" alt="Sala del restaurante A Lareira" loading="lazy" width="1200" height="800" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OPINIONES ============ -->
+    <section class="section container" id="opiniones">
+      <div class="section__head section__head--center" data-reveal>
+        <p class="eyebrow">Opiniones</p>
+        <h2>Lo que dicen quienes ya han venido</h2>
+      </div>
+
+      <div class="grid--testimonials" data-reveal data-reveal-delay="100">
+        <article class="testimonial-card">
+          <svg class="icon" width="26" height="20" style="color:var(--clr-accent-dark)"><use href="#icon-quote"/></svg>
+          <div class="stars" role="img" aria-label="5 de 5 estrellas">
+            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+          </div>
+          <p>"El pulpo estaba espectacular y el trato fue muy cercano, como en casa de la abuela."</p>
+          <footer><strong>Sonia P.</strong><span>Cena en pareja</span></footer>
+        </article>
+
+        <article class="testimonial-card">
+          <svg class="icon" width="26" height="20" style="color:var(--clr-accent-dark)"><use href="#icon-quote"/></svg>
+          <div class="stars" role="img" aria-label="5 de 5 estrellas">
+            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+          </div>
+          <p>"Fuimos un grupo de 8 para una comida de empresa y nos trataron de maravilla, sin prisa."</p>
+          <footer><strong>Marcos A.</strong><span>Comida de grupo</span></footer>
+        </article>
+
+        <article class="testimonial-card">
+          <svg class="icon" width="26" height="20" style="color:var(--clr-accent-dark)"><use href="#icon-quote"/></svg>
+          <div class="stars" role="img" aria-label="4 de 5 estrellas">
+            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg class="icon icon--muted" aria-hidden="true"><use href="#icon-star"/></svg>
+          </div>
+          <p>"Muy buen producto y precio justo. Repetiremos seguro para probar el resto de la carta."</p>
+          <footer><strong>Laura V.</strong><span>Comida familiar</span></footer>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ VISÍTANOS ============ -->
+    <section class="section section--alt" id="visitanos">
+      <div class="container visit">
+        <div data-reveal>
+          <p class="eyebrow">Visítanos</p>
+          <h2>Ven a disfrutar de nuestra cocina</h2>
+
+          <div class="visit__details">
+            <div class="visit__detail">
+              <h3>Dirección</h3>
+              <address>Rúa do Restaurante, 12<br />15001 A Coruña</address>
+            </div>
+            <div class="visit__detail">
+              <h3>Teléfono</h3>
+              <a href="tel:+34981123456">981 123 456</a>
+            </div>
+            <div class="visit__detail">
+              <h3>Horario</h3>
+              <p>Lunes – Domingo<br />13:00 – 16:00<br />20:00 – 23:30</p>
+            </div>
+          </div>
+
+          <a href="https://www.openstreetmap.org/?mlat=43.368&mlon=-8.400#map=16/43.368/-8.400" class="btn btn--outline" target="_blank" rel="noopener">Cómo llegar</a>
+        </div>
+
+        <div class="visit__map" data-reveal data-reveal-delay="120">
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-8.410%2C43.360%2C-8.390%2C43.375&layer=mapnik"
+            title="Ubicación de A Lareira en A Coruña"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESERVAS ============ -->
+    <section class="section reservation" id="reservas">
+      <div class="container reservation__inner">
+        <div class="reservation__content" data-reveal>
+          <p class="eyebrow">Reservas</p>
+          <h2>Reserva tu mesa</h2>
+          <p>
+            Cuéntanos cuándo venís y cuántos sois: te confirmamos la reserva
+            por teléfono en menos de 24 horas.
+          </p>
+          <div class="reservation__note">
+            <svg class="icon" width="20" height="20"><use href="#icon-phone"/></svg>
+            ¿Prefieres llamar? 981 123 456
+          </div>
+        </div>
+
+        <div class="form-card" data-reveal data-reveal-delay="120">
+          <form id="reservationForm" novalidate>
+            <div class="field-row field-row--2">
+              <div class="field">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" autocomplete="name" placeholder="Tu nombre" required minlength="2" />
+                <p class="field__error" data-error-for="name" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="phone">Teléfono</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="600 000 000" required />
+                <p class="field__error" data-error-for="phone" role="alert"></p>
+              </div>
+            </div>
+
+            <div class="field-row field-row--3">
+              <div class="field">
+                <label for="date">Fecha</label>
+                <input type="date" id="date" name="date" required />
+                <p class="field__error" data-error-for="date" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="time">Hora</label>
+                <input type="time" id="time" name="time" required />
+                <p class="field__error" data-error-for="time" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="guests">Comensales</label>
+                <select id="guests" name="guests" required>
+                  <option value="" selected disabled>Selecciona</option>
+                  <option value="1-2">1 - 2</option>
+                  <option value="3-4">3 - 4</option>
+                  <option value="5-6">5 - 6</option>
+                  <option value="7+">7 o más</option>
+                </select>
+                <p class="field__error" data-error-for="guests" role="alert"></p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="notes">Notas (alergias, ocasión especial...)</label>
+              <textarea id="notes" name="notes" rows="3" placeholder="Opcional"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--lg btn--block" id="submitBtn">
+              <span class="btn__label">Solicitar reserva</span>
+              <svg class="icon icon--spin" width="20" height="20" hidden data-submit-spinner><use href="#icon-spinner"/></svg>
+            </button>
+
+            <div class="form__status" data-form-status role="status" aria-live="polite" hidden></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <a href="#inicio" class="footer__brand">
+            <svg class="icon" width="20" height="20"><use href="#icon-flame"/></svg>
+            A Lareira
+          </a>
+          <p>Cocina gallega con producto local y tradición, en el corazón de A Coruña.</p>
+        </div>
+
+        <div class="footer__col">
+          <h3>Enlaces</h3>
+          <ul>
+            <li><a href="#historia">Nuestra historia</a></li>
+            <li><a href="#carta">Carta</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#opiniones">Opiniones</a></li>
+            <li><a href="#reservas">Reservas</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h3>Contacto</h3>
+          <ul>
+            <li>Rúa do Restaurante, 12 · 15001 A Coruña</li>
+            <li><a href="tel:+34981123456">981 123 456</a></li>
+            <li><a href="mailto:ola@alareira.gal">ola@alareira.gal</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© <span data-year></span> A Lareira. Todos los derechos reservados.</p>
+        <nav aria-label="Legal">
+          <a href="#">Aviso legal</a>
+          <a href="#">Privacidad</a>
         </nav>
-    </header>
+      </div>
+    </div>
+  </footer>
 
-    <main>
+  <button class="float-btn float-btn--call" aria-label="Llamar al restaurante" onclick="window.location.href='tel:+34981123456'">
+    <svg class="icon" width="22" height="22"><use href="#icon-phone"/></svg>
+  </button>
+  <button class="float-btn float-btn--top" id="backToTop" aria-label="Volver arriba" hidden>
+    <svg class="icon" width="20" height="20"><use href="#icon-arrow-up"/></svg>
+  </button>
 
-        <section id="inicio" class="hero">
-            <div class="hero__content">
-
-                <p class="hero__eyebrow">RESTAURANTE · COCINA GALLEGA</p>
-
-                <h1 class="hero__title">A Lareira</h1>
-
-                <p class="hero__description">
-                    Sabores de Galicia, producto local y cocina hecha con calma.
-                </p>
-
-                <div class="hero__actions">
-
-                    <a href="#carta" class="button button--primary">
-                        Ver nuestra carta
-                    </a>
-        
-                    <a href="#reservar" class="button button--secondary">
-                        Reservar mesa
-                    </a>
-        
-                </div>
-            </div>
-            
-
-        </section>
-
-        <section id="historia" class="story">
-
-            <div class="story__image">
-                <img
-                    src="img/restaurante-1.1.jpg"
-                    alt="Interior del restaurante A Lareira"
-                >
-            </div>
-        
-            <div class="story__content">
-        
-                <p class="section-eyebrow">
-                    SOBRE NOSOTROS
-                </p>
-        
-                <h2 class="section-title">
-                    Una cocina con raíces gallegas
-                </h2>
-        
-                <p>
-                    En A Lareira trabajamos con producto local y recetas
-                    tradicionales, buscando siempre respetar el sabor de cada
-                    ingrediente.
-                </p>
-        
-                <p>
-                    Un espacio pensado para disfrutar de la gastronomía gallega
-                    en un ambiente tranquilo y cercano.
-                </p>
-        
-            </div>
-        
-        </section>
-
-        <section id="especialidades" class="specialties">
-
-            <div class="section-heading">
-        
-                <p class="section-eyebrow">
-                    DE NUESTRA COCINA
-                </p>
-        
-                <h2 class="section-title">
-                    Especialidades
-                </h2>
-        
-            </div>
-        
-        
-            <div class="specialties__grid">
-        
-                <article class="dish-card">
-        
-                    <div class="dish-card__image">
-                        <img
-                            src="img/plato-1.jpg"
-                            alt="Pulpo a la gallega"
-                        >
-                    </div>
-        
-                    <div class="dish-card__content">
-        
-                        <div class="dish-card__heading">
-                            <h3>Pulpo a la gallega</h3>
-                            <span>18 €</span>
-                        </div>
-        
-                        <p>
-                            Pulpo cocido, aceite de oliva, pimentón y sal.
-                        </p>
-        
-                    </div>
-        
-                </article>
-        
-        
-                <article class="dish-card">
-        
-                    <div class="dish-card__image">
-                        <img
-                            src="img/plato-2.jpg"
-                            alt="Merluza del día"
-                        >
-                    </div>
-        
-                    <div class="dish-card__content">
-        
-                        <div class="dish-card__heading">
-                            <h3>Merluza del día</h3>
-                            <span>22 €</span>
-                        </div>
-        
-                        <p>
-                            Pescado fresco acompañado de productos de temporada.
-                        </p>
-        
-                    </div>
-        
-                </article>
-        
-        
-                <article class="dish-card">
-        
-                    <div class="dish-card__image">
-                        <img
-                            src="img/plato-3.jpg"
-                            alt="Tarta de queso"
-                        >
-                    </div>
-        
-                    <div class="dish-card__content">
-        
-                        <div class="dish-card__heading">
-                            <h3>Tarta de queso</h3>
-                            <span>7 €</span>
-                        </div>
-        
-                        <p>
-                            Cremosa, horneada lentamente y servida con frutos rojos.
-                        </p>
-        
-                    </div>
-        
-                </article>
-        
-            </div>
-        
-        </section>
-
-        <section id="carta" class="menu">
-
-            <div class="section-heading">
-        
-                <p class="section-eyebrow">
-                    NUESTRA CARTA
-                </p>
-        
-                <h2 class="section-title">
-                    Para compartir y disfrutar
-                </h2>
-        
-            </div>
-        
-        
-            <div class="menu__categories">
-        
-                <div class="menu-category">
-        
-                    <h3 class="menu-category__title">
-                        Entrantes
-                    </h3>
-        
-                    <div class="menu-category__items">
-        
-                        <div class="menu-item">
-                            <p>Pulpo a la gallega</p>
-                            <span>18 €</span>
-                        </div>
-        
-                        <div class="menu-item">
-                            <p>Croquetas caseras</p>
-                            <span>10 €</span>
-                        </div>
-        
-                        <div class="menu-item">
-                            <p>Tabla de quesos gallegos</p>
-                            <span>14 €</span>
-                        </div>
-        
-                    </div>
-        
-                </div>
-        
-        
-                <div class="menu-category">
-        
-                    <h3 class="menu-category__title">
-                        Platos principales
-                    </h3>
-        
-                    <div class="menu-category__items">
-        
-                        <div class="menu-item">
-                            <p>Merluza del día</p>
-                            <span>22 €</span>
-                        </div>
-        
-                        <div class="menu-item">
-                            <p>Entrecot de vaca gallega</p>
-                            <span>26 €</span>
-                        </div>
-        
-                        <div class="menu-item">
-                            <p>Arroz de marisco</p>
-                            <span>24 €</span>
-                        </div>
-        
-                    </div>
-        
-                </div>
-        
-        
-                <div class="menu-category">
-        
-                    <h3 class="menu-category__title">
-                        Postres
-                    </h3>
-        
-                    <div class="menu-category__items">
-        
-                        <div class="menu-item">
-                            <p>Tarta de queso</p>
-                            <span>7 €</span>
-                        </div>
-        
-                        <div class="menu-item">
-                            <p>Filloas</p>
-                            <span>6 €</span>
-                        </div>
-        
-                    </div>
-        
-                </div>
-        
-            </div>
-        
-        </section>
-
-        <section id="galeria" class="gallery">
-
-            <div class="section-heading">
-        
-                <p class="section-eyebrow">
-                    EL RESTAURANTE
-                </p>
-        
-                <h2 class="section-title">
-                    Un vistazo a A Lareira
-                </h2>
-        
-            </div>
-        
-        
-            <div class="gallery__grid">
-        
-                <figure class="gallery__item gallery__item--large">
-                    <img
-                        src="img/restaurante-1.jpg"
-                        alt="Interior del restaurante A Lareira"
-                    >
-                </figure>
-        
-        
-                <figure class="gallery__item">
-                    <img
-                        src="img/restaurante-2.jpg"
-                        alt="Mesa preparada del restaurante A Lareira"
-                    >
-                </figure>
-        
-        
-                <figure class="gallery__item">
-                    <img
-                        src="img/restaurante-3.jpg"
-                        alt="Plato servido en A Lareira"
-                    >
-                </figure>
-        
-            </div>
-        
-        </section>
-
-        <section id="visitanos" class="location">
-
-            <div class="location__content">
-        
-                <p class="section-eyebrow">
-                    VISÍTANOS
-                </p>
-        
-                <h2 class="section-title">
-                    Ven a disfrutar de nuestra cocina
-                </h2>
-        
-        
-                <div class="location__details">
-        
-                    <div class="location__detail">
-        
-                        <h3>Dirección</h3>
-        
-                        <address>
-                            Rúa do Restaurante, 12<br>
-                            15001 A Coruña
-                        </address>
-        
-                    </div>
-        
-        
-                    <div class="location__detail">
-        
-                        <h3>Teléfono</h3>
-        
-                        <a href="tel:+34981123456">
-                            981 123 456
-                        </a>
-        
-                    </div>
-        
-        
-                    <div class="location__detail">
-        
-                        <h3>Horario</h3>
-        
-                        <p>
-                            Lunes – Domingo<br>
-                            13:00 – 16:00<br>
-                            20:00 – 23:30
-                        </p>
-        
-                    </div>
-        
-                </div>
-        
-        
-                <a
-                    href="#"
-                    class="button button--primary"
-                >
-                    Cómo llegar
-                </a>
-        
-            </div>
-        
-        
-            <div class="location__map">
-
-                <iframe
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=-8.410%2C43.360%2C-8.390%2C43.375&layer=mapnik"
-                    title="Ubicación de A Lareira en A Coruña"
-                    loading="lazy">
-                </iframe>
-            
-            </div>
-        
-        </section>
-
-        <section id="reservas" class="reservation">
-
-            <div class="reservation__content">
-        
-                <p class="section-eyebrow">
-                    RESERVAS
-                </p>
-        
-                <h2 class="section-title">
-                    Reserva tu mesa
-                </h2>
-        
-                <p>
-                    Disfruta de nuestra cocina gallega y comparte
-                    un momento especial con nosotros.
-                </p>
-        
-                <a href="tel:+34981123456" class="button button--light">
-                    Reservar mesa
-                </a>
-        
-            </div>
-        
-        </section>
-
-    </main>
-
-    <footer class="footer" id="foot">
-
-        <div class="footer__content">
-    
-            <div class="footer__brand">
-    
-                <a href="#inicio" class="footer__logo">
-                    A Lareira
-                </a>
-    
-                <p>
-                    Cocina gallega con producto local
-                    y tradición.
-                </p>
-    
-            </div>
-    
-    
-            <nav class="footer__nav" aria-label="Navegación del pie de página">
-    
-                <h2>
-                    Enlaces
-                </h2>
-    
-                <ul>
-    
-                    <li>
-                        <a href="#inicio">Inicio</a>
-                    </li>
-    
-                    <li>
-                        <a href="#historia">Nuestra historia</a>
-                    </li>
-    
-                    <li>
-                        <a href="#carta">Carta</a>
-                    </li>
-    
-                    <li>
-                        <a href="#galeria">Galería</a>
-                    </li>
-    
-                    <li>
-                        <a href="#visitanos">Visítanos</a>
-                    </li>
-    
-                </ul>
-    
-            </nav>
-    
-    
-            <div class="footer__contact">
-    
-                <h2>
-                    Contacto
-                </h2>
-    
-                <address>
-    
-                    <p>
-                        Rúa do Restaurante, 12<br>
-                        15001 A Coruña
-                    </p>
-    
-                    <a href="tel:+34981123456">
-                        981 123 456
-                    </a>
-    
-                </address>
-    
-            </div>
-    
-        </div>
-    
-    
-        <div class="footer__bottom">
-    
-            <p>
-                © 2026 A Lareira
-            </p>
-    
-            <div>
-                <a href="#">
-                    Aviso legal
-                </a>
-    
-                <a href="#">
-                    Privacidad
-                </a>
-            </div>
-    
-        </div>
-    
-    </footer>
-
-    <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
 </body>
-
 </html>
