@@ -343,10 +343,7 @@ summary:focus-visible {
   color: #fff;
   cursor: pointer;
   padding: 8px;
-}
-
-.header.is-scrolled .nav__toggle {
-  color: var(--clr-ink);
+  z-index: 100;
 }
 
 .nav__backdrop {
